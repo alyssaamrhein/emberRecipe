@@ -3,65 +3,21 @@
 <head>
   <meta charset="utf-8">
   <title>Ember Starter Kit</title>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <script type="text/x-handlebars" data-template-name="application">
-    <nav>
-      <ul>
-        {{#link-to 'index'}} Home {{/link-to}}
-      </ul>
-    </nav>
-    <div class="container">
+  <script type="text/x-handlebars">
+    <h2>Welcome to Ember.js</h2>
+
     {{outlet}}
-    </div>
   </script>
 
   <script type="text/x-handlebars" id="index">
-  <p>{{ recipesCount}}</p>
-  <p>{{ time }}</p>
     <ul>
-    {{#each item in model}}
-      <li><h2>{{link-to item.name "recipe" item.name}}</h2></li>
-      <li>{{link-to 'edit' "edit_recipe" item.name}}</li>
-      <li>{{item.description}}</li>
-      <li>{{item.imgUrl}}</li>
+    {{#each item in RECIPES}}
+      <li>{{item}}</li>
     {{/each}}
     </ul>
-    <footer>
-        <p>This is a footer bia biaaa</p>
-    </footer>
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="recipe">
-    <li><h2>{{name}}</h2></li>
-    <li>{{link-to 'edit' "edit_recipe" item.id}}</li>
-    <li>{{id}}</li>
-    <li>{{description}}</li>
-    <li>{{imgUrl}}</li>
-    <li>{{ingredients}}</li>
-    <li>{{steps}}</li>
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="edit_recipe">
-    <li>{{name}}</li>
-    <li>{{id}}</li>
-    <li>{{description}}</li>
-    <li>{{imgUrl}}</li>
-    <li>{{ingredients}}</li>
-    <li>{{steps}}</li>
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="recipes">
-  <div>
-  {{#each recipe in model}}
-  {{recipe.name}}
-  {{/each}}
-  </div>
-  <div>
-  {{outlet}}
-  </div>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>

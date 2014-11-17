@@ -6,10 +6,3 @@
 li {
   list-style-type:none;
 }
-
-footer p {
-  margin: 0 auto;
-  position: relative;
-  width: 30%;
-  bottom: 0;
-}
