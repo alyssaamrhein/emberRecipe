@@ -2,6 +2,9 @@
 .ember-application {
     margin: 20px;
 }
+body {
+  font-family: 'Lato', sans-serif;
+}
 
 li {
   list-style-type:none;

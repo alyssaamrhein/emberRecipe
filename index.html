@@ -3,26 +3,59 @@
 <head>
   <meta charset="utf-8">
   <title>Ember Starter Kit</title>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
-
+    <nav>
+      <ul>
+        <li>{{link-to 'Home' 'index'}}</li>
+      </ul>
+    </nav>
     {{outlet}}
+    <footer>
+      <p>This is the footer</p>
+    </footer>
   </script>
 
   <script type="text/x-handlebars" id="index">
-    <ul>
-    {{#each item in RECIPES}}
-      <li>{{item}}</li>
+  <h2>Recipes</h2>
+  <ul>
+    {{#each recipe in model}}
+    {{#link-to 'recipe' recipe.id}}
+      {{recipe.name}}
+    {{/link-to}}
+    {{recipe.description}}
     {{/each}}
-    </ul>
+  </ul>
+
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="recipe">
+    <h1>{{name}}</h1>
+    <p>What is it? {{description}}</p>
+    <p>Whats in it? {{ingredients}}</p>
+    <p>How to: {{directions}}</p>
+    {{link-to 'edit' 'edit_recipe' model.id}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="edit_recipe">
+    <form {{action 'editFormSubmit' on='submit'}}>
+    <h1>{{name}}</h1>
+    <p>Change Name: {{input value=name}}</p>
+    <p>Change Description: {{input value=description}}</p>
+    <p>Change Ingredients: {{input value=ingredients}}</p>
+    <p>Change Directions: {{input value=directions}}</p>
+    <button>Edit</button>
+    </form>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>
   <script src="js/libs/handlebars-v1.3.0.js"></script>
   <script src="js/libs/ember-1.8.1.js"></script>
+  <script src="js/libs/ember-data.js"></script>
+  <script src="js/libs/localstorage_adapter.js"></script>
   <script src="js/app.js"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>
