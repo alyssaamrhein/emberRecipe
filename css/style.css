@@ -7,6 +7,14 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+nav {
+  margin: 0 10%;
+}
+
+ul {
+  padding: 0 1em;
+}
+
 li {
   display: inline-block;
   list-style-type:none;
@@ -22,16 +30,41 @@ a {
   width: 100%;
 }
 
-.c40 {
-  float: left;
-  width: 40%;
+.hell{
+  background: url('https://endurancewarrior.files.wordpress.com/2014/09/flames-background.jpg') no-repeat center;
+  background-size: cover;
+  border-radius: 6px;
+  color: white;
+  }
+
+.hell:hover {
+    color: white;
 }
 
-.c60 {
+.c30 {
   float: left;
-  width: 60%;
+  width: 30%;
+}
+
+.c70 {
+  float: left;
+  width: 70%;
 }
 
 footer {
   clear: both;
+  margin: 0 auto;
+  width: 50%;
+}
+
+@media screen and (max-width: 50em){
+  .c30 {
+    float: left;
+    width: 100%;
+  }
+
+  .c70 {
+    float: left;
+    width: 100%;
+  }
 }

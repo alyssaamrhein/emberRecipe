@@ -11,8 +11,8 @@
   <script type="text/x-handlebars">
     <nav>
       <ul>
-        <li>{{link-to 'Home' 'index'}}</li>
-        <li>{{link-to 'Add Recipe' 'add_recipe'}}</li>
+        <li><span class="glyphicon glyphicon-home"></span>{{link-to 'Home' 'index'}}</li>
+        <li><span class="glyphicon glyphicon-plus"></span>{{link-to 'Add Recipe' 'add_recipe'}}</li>
       </ul>
     </nav>
     {{outlet}}
@@ -38,17 +38,17 @@
 
   <script type="text/x-handlebars" data-template-name="recipe">
       <div class="container">
-        <div class="c40">
-          <h1>{{name}}</h1>
+        <h1>{{name}}</h1>
+        <div class="c30">
           <img {{bind-attr src=imgUrl}}/>
         </div>
-        <div class="c60">
+        <div class="c70">
           <p>What is it? {{description}}</p>
           <p>Whats in it? {{ingredients}}</p>
           <p>How to: {{directions}}</p>
         </div>
       {{link-to 'Edit' 'edit_recipe' this classNames='btn btn-primary'}}
-     <button {{action 'destroy'}} class='btn'>Delete Recipe</button>
+     <button {{action 'destroy'}} class='btn hell'>Delete Recipe FOREVER!!!!!!</button>
      </div>
   </script>
 
