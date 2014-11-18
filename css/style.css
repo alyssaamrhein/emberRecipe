@@ -2,10 +2,36 @@
 .ember-application {
     margin: 20px;
 }
+
 body {
   font-family: 'Lato', sans-serif;
 }
 
 li {
+  display: inline-block;
   list-style-type:none;
+}
+
+a {
+  text-decoration: none;
+  padding: 0 .5em;
+}
+
+.container {
+  margin: 0 10%;
+  width: 100%;
+}
+
+.c40 {
+  float: left;
+  width: 40%;
+}
+
+.c60 {
+  float: left;
+  width: 60%;
+}
+
+footer {
+  clear: both;
 }
