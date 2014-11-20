@@ -7,9 +7,9 @@ App.ApplicationAdapter = DS.FirebaseAdapter.extend({
 
 App.CATEGORIES = [
     { id: '1', name: 'Breakfast'},
-    { id: '2', name: 'Dessert'},
-    { id: '3', name: 'Side'},
-    { id: '4', name: 'Main'}
+    { id: '2', name: 'Lunch'},
+    { id: '3', name: 'Dinner'},
+    { id: '4', name: 'Snacks'}
 ];
 // App.AddRecipeRoute = Ember.Route.extend({
 //
