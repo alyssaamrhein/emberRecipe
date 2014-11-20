@@ -14,3 +14,12 @@ App.CATEGORIES = [
 // App.AddRecipeRoute = Ember.Route.extend({
 //
 // });
+
+App.ItemView = Ember.View.extend({
+  mouseEnter: function () {
+    this.set('showTitle', true);
+  },
+  mouseLeave: function () {
+    this.set('showTitle', false);
+  }
+});

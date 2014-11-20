@@ -25,15 +25,17 @@
   </script>
 
   <script type="text/x-handlebars" id="index">
-    <div class="container">
+    <div class="wrapper">
       <h2>Recipes</h2>
       {{#each}}
-        {{#link-to 'recipe' id}}
-          <div class="tint">
-            <img {{bind-attr src=imgUrl}} class="homeImg"/>
-            <p class="hover">{{name}}</p>
-          </div>
-        {{/link-to}}
+        {{#view "item"}}
+          {{#link-to 'recipe' id}}
+             <div {{bind-attr class='view.showTitle:tint:nope'}}>
+              <img {{bind-attr src=imgUrl}} class="homeImg"/>
+              <div class='title'>{{name}}</div>
+            </div>
+          {{/link-to}}
+        {{/view}}
       {{/each}}
     </div>
   </script>

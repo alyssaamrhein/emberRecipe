@@ -7,8 +7,8 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.container {
-  margin: 0 15% 0 10%;
+.wrapper {
+  margin: 0 10%;
 }
 
 img {
@@ -25,18 +25,32 @@ img {
   opacity: .3;
 }
 
-p.hover {
-  margin:0px 0 -20px;
-  position: relative;
-  top: -100px;
-  left: 50px;
+.tint img {
+  opacity: 0.8;
 }
+
+.title {
+  font-size: 1.5em;
+  line-height:0;
+  margin:.5em;
+  opacity:0;
+  word-wrap: break-word;
+}
+
+.tint .title {
+  bottom: 40px;
+  color: white;
+  left: 10px;
+  opacity: 1;
+  position:relative;
+  transition: all 0.4s;
+}
+
 
 .tint {
   background: #333;
   color: rgba(215, 40, 40, 0);
   display: inline-block;
-  margin:.5em .25em 0 .25em;
   transition: color .5s ease;
 }
 
@@ -100,4 +114,10 @@ footer {
     float: left;
     width: 100%;
   }
+
+  .wrapper {
+    margin: 0 5% 0 5%;
+  }
+
+
 }
