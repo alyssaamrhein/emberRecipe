@@ -1,5 +1,4 @@
 App.IndexController = Ember.ArrayController.extend({
-
-  sortProperties: ['name']
+  sortProperties: ['name'],
 
 });
