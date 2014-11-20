@@ -4,5 +4,5 @@ App.Router.map(function() {
   this.route('edit_recipe', {path:'/recipes/:id/edit'});
   this.route('add_recipe', {path:'/recipes/new'});
   this.route('login', {path:'/login'});
-  this.route('category', { path: '/recipes'});
+  this.route('categories', { path: '/categories'});
 });
