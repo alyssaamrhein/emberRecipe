@@ -7,6 +7,43 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.container {
+  margin: 0 15% 0 10%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.homeImg {
+  max-height: 15em;
+  opacity: 1;
+  z-index: 1;
+}
+
+.homeImg:hover {
+  opacity: .3;
+}
+
+p.hover {
+  margin:0px 0 -20px;
+  position: relative;
+  top: -100px;
+  left: 50px;
+}
+
+.tint {
+  background: #333;
+  color: rgba(215, 40, 40, 0);
+  display: inline-block;
+  margin:.5em .25em 0 .25em;
+  transition: color .5s ease;
+}
+
+.tint:hover, .tint:active {
+  color: rgba(255, 255, 255, 1);
+}
+
 nav {
   margin: 0 10%;
 }
@@ -15,19 +52,14 @@ ul {
   padding: 0 1em;
 }
 
-li {
+nav li {
   display: inline-block;
   list-style-type:none;
 }
 
-a {
+nav a {
   text-decoration: none;
   padding: 0 .5em;
-}
-
-.container {
-  margin: 0 10%;
-  width: 100%;
 }
 
 .hell{
@@ -35,7 +67,7 @@ a {
   background-size: cover;
   border-radius: 6px;
   color: white;
-  }
+}
 
 .hell:hover {
     color: white;
@@ -48,6 +80,7 @@ a {
 
 .c70 {
   float: left;
+  padding: 1em;
   width: 70%;
 }
 
