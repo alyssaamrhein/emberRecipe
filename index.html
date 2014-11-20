@@ -9,35 +9,36 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-    <nav>
-      <ul>
-        <li><span class="glyphicon glyphicon-home"></span>{{link-to 'Home' 'index'}}</li>
-        {{#if isLoggedIn}}
-        <li><span class="glyphicon glyphicon-plus"></span>{{link-to "New Recipe" "add_recipe"}}</li>
-        <li><button {{action "logout"}} class='btn btn-primary'>Logout</button></li>
-        {{else}}
-        <li>{{link-to 'Login' 'login' classNames='btn btn-primary'}}</li>
-        {{/if}}
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li><span class="glyphicon glyphicon-home"></span>{{link-to 'Home' 'index'}}</li>
+          {{#if isLoggedIn}}
+          <li><span class="glyphicon glyphicon-plus"></span>{{link-to "New Recipe" "add_recipe"}}</li>
+          <li><button {{action "logout"}} class='btn btn-primary'>Logout</button></li>
+          {{else}}
+          <li>{{link-to 'Login' 'login' classNames='btn btn-primary'}}</li>
+          {{/if}}
+        </ul>
+      </nav>
     {{outlet}}
-
   </script>
 
   <script type="text/x-handlebars" id="index">
-    <div class="wrapper">
-      <h2>Recipes</h2>
-      {{#each}}
-        {{#view "item"}}
-          {{#link-to 'recipe' id}}
-             <div {{bind-attr class='view.showTitle:tint:nope'}}>
-              <img {{bind-attr src=imgUrl}} class="homeImg"/>
-              <div class='title'>{{name}}</div>
-            </div>
-          {{/link-to}}
-        {{/view}}
-      {{/each}}
-    </div>
+    <main>
+      <div class="wrapper">
+        <h2>Recipes</h2>
+        {{#each}}
+          {{#view "item"}}
+            {{#link-to 'recipe' id}}
+               <div {{bind-attr class=':recipeCard view.showTitle:tint'}}>
+                <img {{bind-attr src=imgUrl}} class="homeImg"/>
+                <div class='title'>{{name}}</div>
+              </div>
+            {{/link-to}}
+          {{/view}}
+        {{/each}}
+      </div>
+    </main>
   </script>
 
   <script type="text/x-handlebars" data-template-name="recipe">

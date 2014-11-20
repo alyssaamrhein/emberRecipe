@@ -16,6 +16,7 @@ App.CATEGORIES = [
 // });
 
 App.ItemView = Ember.View.extend({
+	classNames: ['recipeCard'],
   mouseEnter: function () {
     this.set('showTitle', true);
   },
