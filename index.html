@@ -9,57 +9,58 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-      <nav>
+      <nav class="main">
         <ul>
           <li><span class="glyphicon glyphicon-home"></span>{{link-to 'Home' 'index'}}</li>
           {{#if isLoggedIn}}
           <li><span class="glyphicon glyphicon-plus"></span>{{link-to "New Recipe" "add_recipe"}}</li>
+        </ul>
+      </nav>
+      <nav class="logout">
+        <ul>
           <li><button {{action "logout"}} class='btn btn-primary'>Logout</button></li>
           {{else}}
           <li>{{link-to 'Login' 'login' classNames='btn btn-primary'}}</li>
           {{/if}}
         </ul>
       </nav>
-    {{outlet}}
+      <main>
+        {{outlet}}
+      </main>
   </script>
 
   <script type="text/x-handlebars" id="index">
-    <main>
-      <div class="wrapper">
-        <h2>Recipes</h2>
-        {{#each}}
-          {{#view "item"}}
-            {{#link-to 'recipe' id}}
-               <div {{bind-attr class=':recipeCard view.showTitle:tint'}}>
-                <img {{bind-attr src=imgUrl}} class="homeImg"/>
-                <div class='title'>{{name}}</div>
-              </div>
-            {{/link-to}}
-          {{/view}}
-        {{/each}}
-      </div>
-    </main>
+    <div class="wrapper">
+      <h2>Recipes</h2>
+      {{#each}}
+        {{#view "item"}}
+          {{#link-to 'recipe' id}}
+             <div {{bind-attr class=':recipeCard view.showTitle:tint'}}>
+              <img {{bind-attr src=imgUrl}} class="homeImg"/>
+              <div class='title'>{{name}}</div>
+            </div>
+          {{/link-to}}
+        {{/view}}
+      {{/each}}
+    </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="recipe">
-      <div class="container">
-        <h1>{{name}}</h1>
-        <div class="c30">
-          <img {{bind-attr src=imgUrl}}/>
-        </div>
-        <div class="c70">
-          <p>Description: {{description}}</p>
-          <p>Category: {{categoryName}}</p>
-          <p>Ingredients: {{ingredients}}</p>
-          <p>Instructions: {{directions}}</p>
-      {{link-to 'Edit' 'edit_recipe' this classNames='btn btn-primary'}}
-     <button {{action 'destroy'}} class='btn hell'>Delete</button>
-       </div>
+    <h1>{{name}}</h1>
+      <div class="c30">
+        <img {{bind-attr src=imgUrl}}/>
+      </div>
+      <div class="c70">
+        <p>Description: {{description}}</p>
+        <p>Category: {{categoryName}}</p>
+        <p>Ingredients: {{ingredients}}</p>
+        <p>Instructions: {{directions}}</p>
+        {{link-to 'Edit' 'edit_recipe' this classNames='btn btn-primary'}}
+        <button {{action 'destroy'}} class='btn hell'>Delete</button>
      </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="edit_recipe">
-    <div class="container">
       <form {{action 'editFormSubmit' on='submit'}}>
         <h1>{{name}}</h1>
           <p>Change Name: {{input value=name}}</p>
@@ -70,7 +71,6 @@
           <p>Change Directions: {{input value=directions}}</p>
       <button class="edit">Update</button>
       </form>
-    </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="add_recipe">
@@ -87,13 +87,11 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="login">
-    <div class="container">
     <h2>Login</h2>
     <h4>{{error}}</h4>
     {{input type='email'    value=username placeholder='email'}}
     {{input type='password' value=password placeholder='password'}}
     <button {{action 'login'}}>Login</button>
-    </div>
   </script>
 
   <script type="text/x-handlebars" id="category">

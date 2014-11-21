@@ -71,6 +71,10 @@ nav a {
   padding: 0 .5em;
 }
 
+nav.logout {
+  float: right;
+}
+
 .hell{
   background: url('https://endurancewarrior.files.wordpress.com/2014/09/flames-background.jpg') no-repeat center;
   background-size: cover;
@@ -113,6 +117,5 @@ footer {
   main {
     margin: 0 2%;
   }
-
 
 }
