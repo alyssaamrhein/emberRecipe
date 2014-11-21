@@ -21,16 +21,15 @@ img {
 
 .homeImg {
   max-height: 15em;
-  opacity: 1;
-  z-index: 1;
+  /* opacity: 1; */
 }
 
-.homeImg:hover {
-  opacity: .3;
+.tint {
+  background: black;
 }
 
 .tint img {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .title {
@@ -49,22 +48,9 @@ img {
   transition: all 0.4s;
 }
 
-.tint {
-  background: #333;
-  color: rgba(215, 40, 40, 0);
+.ember-view .recipeCard {
   display: inline-block;
-  transition: color .25s ease;
-}
-
-.tint:hover, .tint:active {
-  color: rgba(255, 255, 255, 1);
-  padding: 0 .15em;
-}
-
-.recipeCard {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 0 .15em;
+  margin: 0 .15em;
 }
 
 nav {
@@ -72,7 +58,7 @@ nav {
 }
 
 ul {
-  padding: 0 1em;
+  padding: 0 .25em;
 }
 
 nav li {
