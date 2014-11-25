@@ -1,4 +1,4 @@
-App.CommentController = Ember.ObjectController.extend({
+App.RecipeNewCommentController = Ember.ObjectController.extend({
     markedText: function () {
         return marked(this.get('text') || '');
     }.property('text'),
@@ -15,10 +15,11 @@ App.CommentController = Ember.ObjectController.extend({
             comment.save();
 
             var recipe = this.get('controllers.recipe.model');
+            console.log(comment);
             recipe.get('comments').pushObject(comment);
             recipe.save();
 
             this.transitionToRoute('recipe', recipe.id);
-        }
+      }
     }
 });

@@ -4,5 +4,6 @@ App.Recipe = DS.Model.extend({
   category: DS.attr('string'),
   description: DS.attr('string'),
   ingredients: DS.attr('string'),
-  directions: DS.attr('string')
+  directions: DS.attr('string'),
+  comments: DS.hasMany('comment', { async: true})
 });
