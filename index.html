@@ -56,10 +56,14 @@
      <div class="c100">
      <h2>Comments ({{comments.length}})</h2>
       {{#each comments}}
-        <div class="comment-container">
+        <div class="c5">
+          <img src="https://placehold.it/40x40" alt="">
+        </div>
+        <div class="comment-container c95">
           {{{markedText}}} {{commenter}}
           <p>{{date}}</p>
         </div>
+        <div class="clr"></div>
       {{/each}}
 
       {{outlet}}
